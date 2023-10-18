@@ -1,6 +1,7 @@
 package com.Amelius.DistFileStoreSever.Services;
 
 import com.Amelius.DistFileStoreSever.DTO.NodeDTO;
+import com.Amelius.DistFileStoreSever.Enum.NodeStatus;
 import com.Amelius.DistFileStoreSever.Exception.CustomException;
 import com.Amelius.DistFileStoreSever.Models.Node;
 import com.Amelius.DistFileStoreSever.Repositories.NodeRepo;
@@ -19,6 +20,7 @@ public class NodeService {
 
     public NodeDTO registerNode(Node node){
         verifyNodeCreated(node.getNodeName());
+        node.setNodeStatus(NodeStatus.ONLINE);
         nodeRepo.save(node);
         return mapper.map(node,NodeDTO.class);
     }

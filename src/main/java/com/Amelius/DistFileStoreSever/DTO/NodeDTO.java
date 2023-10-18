@@ -1,6 +1,7 @@
 package com.Amelius.DistFileStoreSever.DTO;
 
 
+import com.Amelius.DistFileStoreSever.Enum.NodeStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,7 +25,7 @@ public class NodeDTO {
     private int fileBlocks;
 
 
-    private String nodeStatus;
+    private NodeStatus nodeStatus;
 
     private int port;
 

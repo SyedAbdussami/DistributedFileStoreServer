@@ -19,8 +19,9 @@ public class NodeController {
     @Autowired
     NodeService nodeService;
 
-    @PostMapping("/")
+    @PostMapping("/register")
     public ResponseEntity<?> createNode(@RequestBody Node node){
+        System.out.println("Received a node registration request from "+node.getNodeName() +" running at port "+node.getPort());
         return new ResponseEntity<>(nodeService.registerNode(node), HttpStatus.ACCEPTED);
     }
 }
